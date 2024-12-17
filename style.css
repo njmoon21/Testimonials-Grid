@@ -75,12 +75,73 @@
     isolation: isolate;
   }
 
+
 /* --------------------------------------------------------------- */
 /* Personal Styles */
 
 body {
     font-family: var(--ff-main);
     font-size: 13px;
+
+    background: var(--clr-light-grayish-blue);
+
+	display: grid;
+	min-height: 100vh;
+	place-content: center;
+	margin: 5rem;
+}
+
+/* Card styles | 2 Rows and 13 Columns */
+.grid-layout {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(13, 1fr);
+	gap: 1.75rem;
+}
+
+.testimony {
+	padding: 1rem;
+	border-radius: .5rem;
+}
+
+.testimony__author {
+	display: flex;
+}
+
+.testimony__daniel {
+	grid-row: 1;
+	grid-column: 1 / 8;
+	background: var(--clr-violet);
+}
+
+.testimony__jonathan{
+	grid-row: 1;
+	grid-column: 8 / 11;
+	background: var(--clr-dark-grayish-blue);
+}
+
+.testimony__jeanette {
+	grid-row: 2;
+	grid-column: 1 / 4;
+	background: var(--clr-white);
+}
+
+.testimony__patrick {
+	grid-row: 2;
+	grid-column: 4 / 11;
+	background: var(--clr-dark-blakish-blue);
+}
+
+.testimony__kira {
+	grid-row: 1 / 3;
+	grid-column: 11 / 14;
+	background: var(--clr-white);
+}
+
+.avatar {
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 100%;
 }
 
 /* Attribution styles */
