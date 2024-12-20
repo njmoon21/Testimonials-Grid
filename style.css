@@ -167,6 +167,7 @@ body {
 
 .testimony__jeanette {
 	background: var(--clr-white);
+	color: var(--clr-dark-blakish-blue);
 }
 
 .testimony__patrick {
@@ -177,6 +178,7 @@ body {
 	grid-column: 4;
 	grid-row: 1 / 3;
 	background: var(--clr-white);
+	color: var(--clr-dark-blakish-blue);
 }
 
 .author__captions {
