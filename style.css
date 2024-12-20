@@ -22,6 +22,7 @@
     --opacity-50: 50%;
     --opacity-70: 70%;
     --ff-main: 'Barlow Semi Condensed', sans-serif;
+	--fw-400: 400;
     --fw-500: 500;
     --fw-600: 600;
 }
@@ -88,61 +89,109 @@ body {
 	display: grid;
 	min-height: 100vh;
 	place-content: center;
-	margin: 5rem;
 }
 
 /* Card styles | 2 Rows and 13 Columns */
 .grid-layout {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: repeat(13, 1fr);
 	gap: 1.75rem;
+
+	padding-block: 2rem;
+	width: min(95%, 100em);
+	margin-inline: auto;
+}
+
+@media (max-width: 55em) {
+	body {
+		margin: .5rem;
+	}
+
+	.grid-layout {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .testimony {
-	padding: 1rem;
+	padding: 1.75rem;
 	border-radius: .5rem;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
+}
+
+.testimony__author-details {
+	font-size: .5rem;
+	font-weight: var(--fw-600);
+	margin-bottom: .75rem;
+}
+
+.testimony__dark > *{
+	color: var(--clr-white);
+}
+
+.testimony__wide {
+	grid-column: span 2;
 }
 
 .testimony__author {
 	display: flex;
 }
 
-.testimony__daniel {
-	grid-row: 1;
-	grid-column: 1 / 8;
-	background: var(--clr-violet);
-}
-
-.testimony__jonathan{
-	grid-row: 1;
-	grid-column: 8 / 11;
-	background: var(--clr-dark-grayish-blue);
-}
-
-.testimony__jeanette {
-	grid-row: 2;
-	grid-column: 1 / 4;
-	background: var(--clr-white);
-}
-
-.testimony__patrick {
-	grid-row: 2;
-	grid-column: 4 / 11;
-	background: var(--clr-dark-blakish-blue);
-}
-
-.testimony__kira {
-	grid-row: 1 / 3;
-	grid-column: 11 / 14;
-	background: var(--clr-white);
+.author__type {
+	font-weight: var(--fw-400);
+	opacity: 50%;
 }
 
 .avatar {
 	border-radius: 50%;
-	width: 2.5rem;
-	height: 100%;
+	border: 2px solid hsl(210, 46%, 95%, .5);
+	width: 2.2rem;
+	height: auto;
+	margin-right: 1rem;
 }
+
+.testimony__patrick .avatar {
+	border: 2px solid hsl(263, 55%, 52%);
+}
+
+/* Author Specific */
+.testimony__daniel {
+	background: var(--clr-violet);
+	background-image: url('./images/bg-pattern-quotation.svg');
+	background-repeat: no-repeat;
+	background-position: 80% 0;
+}
+
+.testimony__jonathan{
+	background: var(--clr-dark-grayish-blue);
+}
+
+.testimony__jeanette {
+	background: var(--clr-white);
+}
+
+.testimony__patrick {
+	background: var(--clr-dark-blakish-blue);
+}
+
+.testimony__kira {
+	grid-column: 4;
+	grid-row: 1 / 3;
+	background: var(--clr-white);
+}
+
+.author__captions {
+	font-weight: var(--fw-600);
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+
+.author__quote {
+	opacity: 70%;
+	line-height: 1.3rem;
+}
+
+/* Mobile View */
+
 
 /* Attribution styles */
 .attribution { font-size: 11px; text-align: center; }
